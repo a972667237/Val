@@ -1,0 +1,24 @@
+{% extends 'article.html' %}
+{% block extstyle %}
+<link rel="stylesheet" href="/static/css/products.css">
+{% endblock %}
+{% block header-title %}
+{{ nt.name }}
+{% endblock %}
+{% block article %}
+    <div class="product-list">
+    <div class="each-container">
+        <div class="each-type"><h2>{{ nt.name }}</h2></div>
+        <div class="rows">
+        {% for p in s %}
+        <a href="/product_detail?pk={{ p.pk }}">
+            <div class="product-card new">
+            <img src="/media/{{ p.cover }}" alt="">
+            <a href="/product_detail?pk={{ p.pk }}">{{ p.name }}</a>
+            </div>
+        </a>
+        {% endfor %}
+        </div>
+    </div>
+    </div>
+{% endblock %}

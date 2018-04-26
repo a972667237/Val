@@ -1,0 +1,12 @@
+{% extends 'article_base.html' %}
+{% block header-title %}
+    {{ article.title }}
+{% endblock %}
+{% block left-content %}
+    {% autoescape off %}
+        {{ article.content }}
+    {% endautoescape %}
+{% endblock %}
+{% block right-content %}
+    <img src="http://www.val-international.com.au/templets/default/images/a1.jpg" alt=""/>
+{% endblock %}

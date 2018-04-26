@@ -1,0 +1,41 @@
+html{
+    width: 100%;
+    background: black;
+}
+
+body{
+    max-width: 1600px;
+    margin: 0 auto;
+    background: white;
+}
+
+.top_fixed{
+    background: black;
+}
+
+.top_fixed .logo_place, .top_fixed .navbar{
+    padding: 0 25px;
+}
+
+.top_fixed nav .navbar-menu .navbar-end{
+    align-items: center;
+}
+
+header{
+    width: 100%;
+}
+
+.top_fixed .logo_place{
+    height: 75px;
+}
+
+.top_fixed .logo_place .logo_left , .top_fixed .logo_place .logo_right{
+    display: inline-block;
+    height: 100%;
+    width: 150px;
+}
+
+.top_fixed .logo_place .logo_left{
+    background: url(../img/logo.png) no-repeat center;
+    background-size: 100%;
+}

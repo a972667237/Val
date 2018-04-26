@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{% block title %} Val {% endblock %}</title>
+        <link rel="stylesheet" href="/static/css/bulma.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/index.css" type="text/css" charset="utf-8">
+        {% block style %}
+        {% endblock %}
+        <script src="/static/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+        <script src="/static/js/fontawesome-all.js" type="text/javascript"></script>
+        {% block headScript %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="top_fixed">
+            <div class="logo_place">
+                <div class="logo_left">
+                    
+                </div>
+                <div class="logo_right">
+                    
+                </div>
+            </div>
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+               <div class="navbar-menu">
+                   <div class="navbar-start">
+                       <a href="/" class="navbar-item"><span>HOME</span></a>
+                       <a href="/about" class="navbar-item"><span>ABOUT US</span></a>
+                       {% if t %}
+                       <div class="navbar-item has-dropdown
+                           is-hoverable">
+                           <a class="navbar-link" href="/products">PRODUCTS</a>
+                           <div class="navbar-dropdown">
+                               {% for type in t %}
+                               <a class="navbar-item" href="/products?pk={{type.pk }}">{{ type.name }}</a>
+                                {% endfor %}
+                           </div>
+                       </div>
+                       {% else %}
+                       <a class="navbar-item" href="/products">PRODUCTS</a>
+                       {% endif %}
+                       <a href="/news" class="navbar-item"><span>NEWS</span></a>
+                       <a href="/contact" class="navbar-item"><span>CONTACT</span></a>
+                       <a href="/gallery" class="navbar-item"><span>GALLERY</span></a>
+                   </div>
+                   <div class="navbar-end">
+                       <div class="field has-addons">
+                         <div class="control">
+                            <input class="input" type="text" placeholder="Find a repository">
+                        </div>
+                        <div class="control">
+                            <a class="button is-info">
+                            Search
+                            </a>
+                        </div>
+                    </div>
+                   </div>
+               </div> 
+            </nav>
+        </div>
+        <header>
+        {% block header %}
+        {% endblock %}
+        </header>
+        <main>
+        {% block main %}
+        {% endblock %}
+        </main>
+        <footer class="footer">
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <div class="tile is-child ft-navigation">
+                        <div class="child-title">
+                            <h2>NAVIGATION</h2>
+                        </div>
+                        <ul>
+                            <li><a href="#">ABOUT_US</a></li>
+                            <li><a href="#">PRODUCTS</a></li>
+                            <li><a href="#">NEWS</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                            <li><a href="#">GALLERY</a></li>
+                            <li><a href="#">RECRUITMENT</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tile is-parent">
+                    <div class="tile is-child international">
+                        <div class="child-title">
+                            <h2>WE ARE VAL INTERNATIONAL</h2>
+                        </div>
+                        <ul>
+                            <li><a href="#">Corporate culture</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Enterprise image</a></li>
+                            <li><a href="#">Qualification certificate</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tile is-parent">
+                    <div class="tile is-child contact">
+                        <div class="child-title">
+                            <h2>GET CONNECTED</h2>
+                        </div>
+                        <span class="icon">
+                            <i class="fab fa-facebook-square"></i>
+                        </span>
+                        <span class="icon">
+                            <i class="fab fa-twitter-square"></i>
+                        </span>
+                        <span class="icon">
+                            <i class="fab fa-linkedin"></i>
+                        </span>
+                        <span class="icon">
+                            <i class="fab fa-pinterest-square"></i>
+                        </span>
+                        <span class="icon">
+                            <i class="fab fa-vimeo-square"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+    {% block bScript %}
+    {% endblock %}
+    {% block pageScript %}
+    {% endblock %}
+</html>

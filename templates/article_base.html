@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block style %}
+<link rel="stylesheet" href="/static/css/article_base.css" type="text/css" charset="utf-8">
+{% block extstyle %}
+{% endblock %}
+{% endblock %}
+{% block header %}
+    <div class="gray-header">
+        <div class="header-title"><span>{% block header-title %} {% endblock%}</span></div>
+    </div>
+{% endblock %}
+{% block main %}
+<article class="art">
+    {% block article %}
+    <div class="article-left">{% block left-content %} {% endblock %}</div>
+    <div class="article-right">{% block right-content %} {% endblock %}</div>
+    {% endblock %}
+</article>
+{% endblock %}

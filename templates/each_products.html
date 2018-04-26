@@ -1,0 +1,88 @@
+{% extends 'article.html' %}
+{% block extstyle %}
+<link rel="stylesheet" href="/static/css/each_product.css">
+{% endblock %}
+{% block header-title %}
+{{ p.name }}
+{% endblock %}
+{% block article %}
+    <div class="article-left">
+        <img src="/static/{{ p.cover }}" alt="">
+    </div>
+    <div class="article-right">
+        <div class="summary">
+            <h1>{{ p.name }}</h1>
+            <h3>SPECIFICATIONS</h3>
+            <table class="is-hoverable table">
+                <tbody>
+                    <tr>
+                        <td>Product code:</td>
+                        <td>{{ p.code }}</td>
+                    </tr>
+                    <tr>
+                        <td>Power:</td>
+                        <td>{{ p.power }}</td>
+                    </tr>
+                    <tr>
+                        <td>Electric data:</td>
+                        <td>{{ p.electric_data }}</td>
+                    </tr>
+                    <tr>
+                        <td>Beam angle:</td>
+                        <td>{{ p.beam_angle }}</td>
+                    </tr>
+                    <tr>
+                        <td>Color temperature:</td>
+                        <td>{{ p.color_temperature }}</td>
+                    </tr>
+                    <tr>
+                        <td>IP class:</td>
+                        <td>{{ p.ip_class }}</td>
+                    </tr>
+                    <tr>
+                        <td>Fixture size:</td>
+                        <td>{{ p.fixture_size }}</td>
+                    </tr>
+                    <tr>
+                        <td>Cutout size:</td>
+                        <td>{{ p.cutout_size }}</td>
+                    </tr>
+                    <tr>
+                        <td>LED source:</td>
+                        <td>{{ p.led_source }}</td>
+                    </tr>
+                    <tr>
+                        <td>Fixture material:</td>
+                        <td>{{ p.fixture_material }}</td>
+                    </tr>
+                    <tr>
+                        <td>Finish:</td>
+                        <td>{{ p.finish }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button class="button">DOWNLOAD DATASHEET</button>
+    </div>
+    <div class="product-content">
+        {% autoescape off %}
+            {{ p.more_info }}
+        {% endautoescape %}
+    </div>
+    <div class="related">
+        <div class="related-title">
+            <h4>RELETED PRODUCTS</h4>
+        </div>
+        <div class="columns related-products">
+            {% for i in more %}
+            <div class="related-product column">
+                <a href="/product_detail?pk={{ i.pk }}"><img src="/static/{{ i.cover }}" alt=""></a>
+                <div class="related-info">
+                    <h3>{{ i.kind.name }}</h3>
+                    <a href="/product_detail?pk={{ i.pk }}">{{ i.name }}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

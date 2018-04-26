@@ -1,0 +1,95 @@
+.art .article-left {
+    margin-left: 15%;
+    margin-right: 0;
+    width: 35%;
+}
+
+.art .article-right{
+    width: auto;
+}
+
+.summary h1{
+    font-size: 36px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.summary h3{
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 30px 6px 6px;
+}
+
+table{
+    font-size: 12px;
+}
+
+.button{
+    font-size: 12px;
+}
+
+.product-content{
+    margin: 32px 15% 0 15%;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.related{
+    margin: 0 15% 0 15%;
+}
+
+.related .related-title{
+    height: 5em;
+    line-height: 5em;
+    position: relative;
+}
+
+.related .related-title:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 4em;
+    border: 1px solid #000;
+}
+
+.columns{
+    margin-left: 0;
+}
+
+.related .related-title h4{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.related-products .related-product{
+    max-width: 25%;
+    min-width: 25%;
+    padding: 0 48px 0 0;
+}
+
+.related-products{
+    overflow: hidden;
+}
+
+.related-info{
+    font-size: 12px;
+}
+
+.related-info h3{
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #f7941e;
+    line-height: 18px;
+    word-wrap:break-word;
+    width: 80%;
+}
+
+.related-info a{
+    color: black;
+}
+
+.related-info a:hover{
+    text-decoration: underline;
+}

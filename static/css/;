@@ -1,0 +1,30 @@
+.gray-header{
+    background-color: #eaeaea;
+    padding-top: 100px;
+}
+
+.gray-header .header-title{
+    display: inline-block;
+    font-size: 2.1875em;
+    padding-left: 25px;
+    padding-right: 25px;
+    line-height: 2em;
+    background: #B5D2D1;
+    color: white;
+    border-top-right-radius: 2px;
+}
+
+.art{
+    padding: 75px 0;
+}
+
+.art .article-left, .art .article-right{
+    display: inline-block;
+}
+.art .article-left{
+    width: 60%;
+    margin-right: 5%;
+}
+.art .article-right{
+    width: 33%;
+}
