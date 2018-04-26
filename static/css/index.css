@@ -40,6 +40,10 @@ header{
     background-size: 100%;
 }
 
+.vertials-card{
+    margin-top: 48px;
+}
+
 .vertial-content.columns{
     margin-left: 0;
 }
@@ -57,5 +61,6 @@ header{
     display: inline-block;
     width: 2em;
     border-bottom: 1px solid #000;
-    margin-top: -12px;
+    position: relative;
+    top: -12px;
 }
