@@ -39,3 +39,23 @@ header{
     background: url(../img/logo.png) no-repeat center;
     background-size: 100%;
 }
+
+.vertial-content.columns{
+    margin-left: 0;
+}
+
+.vertial-card-title{
+    text-align: center;
+}
+
+.vertial-card-title h2{
+    font-size: 1.75em;
+    font-weight: 300;
+}
+
+.vertials-card .vertial-hr{
+    display: inline-block;
+    width: 2em;
+    border-bottom: 1px solid #000;
+    margin-top: -12px;
+}
