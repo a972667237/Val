@@ -5,6 +5,8 @@ from .models import *
 # Create your views here.
 def index(requests):
     slide = Slide.objects.all()
+    product = Product.objects.all().order_by('-pk')
+    product = product[:6]
     return render(requests, 'index.html', locals())
 
 def article(requests):
