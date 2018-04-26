@@ -85,3 +85,40 @@ header{
     color: rgba(158,158,158,0.8);
     border-color: rgba(158,158,158,0.6);
 }
+
+.gallery .vertial-content{
+    font-size: 0;
+}
+
+.gallery .column{
+    height: 400px;
+}
+
+.gallery img{
+    transition: transform .8s;
+    width: 100%;
+}
+
+.gallery img:hover{
+    transform: scale(1.2);
+    zoom: 1.2;
+}
+
+.gallery .is-4 a{
+    margin-left: 1%;
+    width: 49.5%;
+    height: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.gallery .is-4 a:first-child{
+    margin-left: 0;
+}
+
+.gallery .is-4 a:last-child{
+    margin-top: 5px;
+    margin-left: 0;
+    width: 100%;
+}
