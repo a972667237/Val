@@ -104,13 +104,16 @@ header{
     zoom: 1.2;
 }
 
+.gallery .column a{
+    overflow: hidden;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
 .gallery .is-4 a{
     margin-left: 1%;
     width: 49.5%;
     height: 50%;
-    overflow: hidden;
-    box-sizing: border-box;
-    display: inline-block;
 }
 
 .gallery .is-4 a:first-child{
@@ -118,7 +121,76 @@ header{
 }
 
 .gallery .is-4 a:last-child{
-    margin-top: 5px;
+    margin-top: 1%;
     margin-left: 0;
     width: 100%;
+    height: 48.5%;
+}
+
+.gallery .is-6 a{
+    width: 100%;
+    height: 100%;
+}
+
+.gallery .is-2 a{
+    width: 100%;
+    height: 49%;
+}
+
+.gallery .is-2 a:last-child{
+    margin-top: 2%;
+}
+
+.gallery .column{
+    padding: 12px 5px 12px 0;
+}
+
+.gallery .column:first-child{
+    padding-left: 12px;
+}
+
+.gallery .column:last-child{
+    padding: 12px 12px 12px 0;
+}
+
+@media screen and (max-width: 1400px){
+  .gallery .column{
+      height: 320px;
+  }    
+}
+
+@media screen and (max-width: 1300px){
+    .gallery .column{
+        height: 280px;
+    }
+}
+
+@media screen and (max-width: 1080px){
+    .gallery .column{
+        height: 240px;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .gallery .column{
+        height: 220px;
+    }
+}
+
+@media screen and (max-width: 840px){
+    .gallery .column{
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #jssor_1{
+        height: 360px !important;
+    }
+}
+
+@media screen and (max-width: 450px){
+    #jssor_1{
+        height: 220px !important;
+    }
 }
