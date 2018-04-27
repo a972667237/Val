@@ -153,6 +153,28 @@ header{
     padding: 12px 12px 12px 0;
 }
 
+.top_fixed{
+    position: fixed;
+    z-index: 1000;
+    max-width: 1600px;
+    width: 100%;
+    top: 0;
+    background-color: transparent;
+}
+
+.top_fixed .logo_place{
+    background-color: black;
+}
+
+.top_fixed .navbar{
+    background: white;
+    opacity: 0.8;
+}
+
+header{
+    padding-top: 127px;
+}
+
 @media screen and (max-width: 1400px){
   .gallery .column{
       height: 320px;
@@ -194,3 +216,5 @@ header{
         height: 220px !important;
     }
 }
+
+
