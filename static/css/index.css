@@ -175,6 +175,23 @@ header{
     padding-top: 127px;
 }
 
+.navbar .navbar-menu{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.is-active .field .control:first-child{
+    width: 100%;
+}
+
+.mobile-menu{
+    display: inline-block;
+    height: 75px;
+    line-height: 90px;
+    vertical-align: top;
+    margin-right: 24px;
+}
+
 @media screen and (max-width: 1400px){
   .gallery .column{
       height: 320px;
@@ -190,6 +207,18 @@ header{
 @media screen and (max-width: 1080px){
     .gallery .column{
         height: 240px;
+    }
+    #jssor_1{
+        height: 480px !important;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .is-active{
+        display: none;
+    }
+    .mobile-menu{
+        display: none;
     }
 }
 
