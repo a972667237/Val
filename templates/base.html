@@ -14,10 +14,31 @@
         {% endblock %}
     </head>
     <body>
+        <div class="menu-background"></div>
+        <aside class="menu">
+            <p class="menu-label">VAL</p>
+            <ul class="menu-list">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/about">ABOUT US</a></li>
+                <li>
+                    <a href="/products">PRODUCTS</a>
+                    {% if t %}
+                        <ul>
+                            {% for type in t %} 
+                            <li><a href="/products?pk={{ type.pk }}">{{type.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+                <li><a href="/news">NEWS</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+                <li><a href="/gallery">GALLERY</a></li>
+            </ul>
+        </aside>
         <div class="top_fixed">
             <div class="logo_place">
                 <div class="mobile-menu">
-                    <a href="javascript:void()">
+                    <a href="javascript:void(0)">
                         <span class="icon" style="color: white">
                             <i class="fas fa-bars fa-2x"></i>
                         </span>
@@ -144,6 +165,19 @@
     </body>
     {% block bScript %}
     {% endblock %}
+    <script>
+        $(".mobile-menu").click(function(){
+            $(".menu").css({"overflow-x": "auto", "overflow-y": "auto"});
+            $(".menu").animate({width: "50%", paddingLeft: "24px"});
+            $(".menu-background").animate({zIndex: "1500"});
+            $("html").css({"overflow-x": "hidden", "overflow-y": "hidden"});
+        });
+        $(".menu-background").click(function(){
+            $("html").css({"overflow-x": "auto", "overflow-y": "auto"});
+            $(".menu").animate({width: "0", paddingLeft: "0"});
+            $(".menu-background").animate({zIndex: "-100"});
+        })
+    </script>
     {% block pageScript %}
     {% endblock %}
 </html>
