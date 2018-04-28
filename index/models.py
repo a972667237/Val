@@ -7,6 +7,7 @@ from DjangoUeditor.models import UEditorField
 class Article(models.Model):
     title = models.CharField(u'title', max_length=100)
     content = UEditorField(u'content', max_length=200000)
+    descript = models.CharField(u'descirpt', max_length=10000, default=" ")
     date = models.DateField(u'create_date', auto_now_add=True, editable=True)
     cover = models.ImageField(u'cover_image', default="/static/img/005.jpg")
     isShow = models.BooleanField(u'show_cover', default=False)
