@@ -11,7 +11,7 @@ class Article(models.Model):
     date = models.DateField(u'create_date', auto_now_add=True, editable=True)
     cover = models.ImageField(u'cover_image', default="/static/img/005.jpg")
     isShow = models.BooleanField(u'show_cover', default=False)
-    create_date = models.DateField(u"create_time", auto_now_add=True)
+    create_date = models.DateField(u"create_time")
     class Meta:
         verbose_name = u'article'
         verbose_name_plural = verbose_name
