@@ -17,6 +17,7 @@ def article(requests):
 def news(requests):
     pk = requests.GET.get('pk', 0)
     if pk is 0:
+        article = Article.objects.all()
         return render(requests, 'news.html', locals())
 
 def products(requests):
