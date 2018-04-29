@@ -1,8 +1,14 @@
 {% extends 'article_base.html' %}
 {% block header-title %}
-    {{ article.title }}
+    NEWS
 {% endblock %}
 {% block left-content %}
+    <div class="new-title">
+        <span>{{ article.title }}</span>
+    </div>
+    <div class="new-date">
+        <span>{{ article.create_date }}</span>
+    </div>
     {% autoescape off %}
         {{ article.content }}
     {% endautoescape %}
@@ -14,11 +20,9 @@
     <div class="recent-article">
         <span class="recent-title">Recent articles</span>
         <ul>
-            <li><a href="/">~</a></li>
-            <li><a href="/">21asdfas</a></li>
-            <li><a href="/">agoividoa </a></li>
-            <li><a href="/">2131sa </a></li>
-            <li><a href="/">fdjsaifio</a></li>
+            {% for a in recent_article %}
+            <li><a href="/news?pk={{ a.pk }}">{{ a.title }}</a></li>
+            {% endfor %}
         </ul>
     </div>
     {% endif %}

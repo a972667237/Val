@@ -17,8 +17,11 @@ def article(requests):
 def news(requests):
     pk = requests.GET.get('pk', 0)
     if pk is 0:
-        article = Article.objects.all()
+        article = Article.objects.filter(pk__gt=2)
         return render(requests, 'news.html', locals())
+    recent_article = Article.objects.filter(pk__gt=2).order_by("-pk")[:5]
+    article = get_object_or_404(Article, pk=pk)
+    return render(requests, 'each_new.html', locals())
 
 def products(requests):
     pk = requests.GET.get('pk', 0)

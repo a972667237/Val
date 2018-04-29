@@ -4,83 +4,29 @@
 {% endblock %}
 {% block header-title %}NEWS{% endblock %}
 {% block left-content %}
+    {% for i in article %}
     <div class="article-card">
-        <div class="article-title"><a href="/article?pk=1">2017 Hong Kong International Autumn Lighting Fair</a></div>
-        <div class="article-info"><span>2018-4-24</span></div>
+        <div class="article-title"><a href="/news?pk={{ i.pk }}">{{ i.title }}</a></div>
+        <div class="article-info"><span>{{ i.create_date }}</span></div>
         <div class="article-detail">
-            <a href="/"><img
-                src="http://www.val-international.com.au/ueditor/php/upload/image/20171208/1512721503626525-lp.jpg"
+            <a href="/news?pk={{ i.pk }}"><img
+               src="/media/{{ i.cover }}"
                 alt=""></a>
             <div class="detail-content">
                 <p>
-                    2017 Hong Kong International Autumn Lighting Fair was a HUGE success VAL Internat
+                {{ i.descript }}
                 </p>
-                <a href="/">Read more...</a>
+                <a href="/news?pk={{ i.pk }}">Read more...</a>
             </div>
         </div>
     </div>
+    {% endfor %}
 
-    <div class="article-card">
-        <div class="article-title"><a href="/article?pk=1">2017 Hong Kong International Autumn Lighting Fair</a></div>
-        <div class="article-info"><span>2018-4-24</span></div>
-        <div class="article-detail">
-            <a href="/"><img
-                src="http://www.val-international.com.au/ueditor/php/upload/image/20171208/1512721503626525-lp.jpg"
-                alt=""></a>
-            <div class="detail-content">
-                <p>
-                    2017 Hong Kong International Autumn Lighting Fair was a HUGE success VAL Internat
-                </p>
-                <a href="/">Read more...</a>
-            </div>
-        </div>
-    </div>
-    <div class="article-card">
-        <div class="article-title"><a href="/article?pk=1">2017 Hong Kong International Autumn Lighting Fair</a></div>
-        <div class="article-info"><span>2018-4-24</span></div>
-        <div class="article-detail">
-            <a href="/"><img
-                src="http://www.val-international.com.au/ueditor/php/upload/image/20171208/1512721503626525-lp.jpg"
-                alt=""></a>
-            <div class="detail-content">
-                <p>
-                    2017 Hong Kong International Autumn Lighting Fair was a HUGE success VAL Internat
-                </p>
-                <a href="/">Read more...</a>
-            </div>
-        </div>
-    </div>
-    <div class="article-card">
-        <div class="article-title"><a href="/article?pk=1">2017 Hong Kong International Autumn Lighting Fair</a></div>
-        <div class="article-info"><span>2018-4-24</span></div>
-        <div class="article-detail">
-            <a href="/"><img
-                src="http://www.val-international.com.au/ueditor/php/upload/image/20171208/1512721503626525-lp.jpg"
-                alt=""></a>
-            <div class="detail-content">
-                <p>
-                    2017 Hong Kong International Autumn Lighting Fair was a HUGE success VAL Internat
-                </p>
-                <a href="/">Read more...</a>
-            </div>
-        </div>
-    </div>
-    <div class="article-card">
-        <div class="article-title"><a href="/article?pk=1">2017 Hong Kong International Autumn Lighting Fair</a></div>
-        <div class="article-info"><span>2018-4-24</span></div>
-        <div class="article-detail">
-            <a href="/"><img
-                src="http://www.val-international.com.au/ueditor/php/upload/image/20171208/1512721503626525-lp.jpg"
-                alt=""></a>
-            <div class="detail-content">
-                <p>
-                    2017 Hong Kong International Autumn Lighting Fair was a HUGE success VAL Internat
-                </p>
-                <a href="/">Read more...</a>
-            </div>
-        </div>
-    </div>
 {% endblock %}
 {% block right-content %}
-
+<div class="recent-article">
+    <span class="recent-title">All Events</span>
+    <ul>
+    </ul>
+</div>
 {% endblock %}
