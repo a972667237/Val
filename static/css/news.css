@@ -10,13 +10,13 @@
     border: 0;
 }
 
-a{
+.article-title a, .article-detail a{
     color: #6b6b6b;
     border-bottom: 1px dotted #9e9e9e;
     transition: color .22s ease-in-out,border .22s ease-in-out;
 }
 
-a:hover{
+.article-title a:hover, .article-detail:hover{
     color: rgba(158,158,158,0.8);
     border-color: rgba(158,158,158,0.6);
 }
