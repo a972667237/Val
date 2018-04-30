@@ -40,3 +40,6 @@ def product_detail(requests):
     p = get_object_or_404(Product, pk=pk)
     more = Product.objects.filter(kind=p.kind)
     return render(requests, 'each_products.html', locals())
+
+def gallery(requests):
+    return render(requests, 'gallery.html', locals())
