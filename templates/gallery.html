@@ -1,6 +1,7 @@
 {% extends 'article_base.html' %}
 {% block extstyle %}
 <link rel="stylesheet" href="/static/css/gallery.css">
+<link rel="stylesheet" href="/static/css/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
 {% endblock %}
 {% block header-title %}
 GALLERY
@@ -10,52 +11,26 @@ GALLERY
     <span>GALLERY</span>
 </div>
 <div class="gallery-place">
+    {% for i in gal %}
     <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
+        <a href="/media/{{ i.img.image }}" class="cboxElement"
+                                           rel="withhearts-gallery" style="float: left; display: block; line-height: 0; box-sizing: border-box; width: 100%;"><img src="/media/{{ i.img.image }}"
+                data-highres="/media/{{i.img.image }}"></a>
+        <a href="{{ i.img.link }}">{{ i.name }}</a>
     </div>
-    <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
-    </div>
-    <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
-    </div>
-    <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
-    </div>
-    <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
-    </div>
-    <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
-    </div>
-    <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
-    </div>
-    <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
-    </div>
-    <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
-    </div>
-    <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
-    </div>
-    <div class="gallery-card">
-        <a href="/"><img src="/media/./1512721503626525-lp_LNVPRSH.jpg" alt=""></a>
-        <a href="/">Gallery</a>
-    </div>
+    {% endfor %}
 </div>
 {% endblock %}
 {% block bScript %}
 <script src="/static/js/jquery.colorbox-min.js" charset="utf-8"></script>
+{% endblock %}
+{% block pageScript %}
+<script charset="utf-8">
+    $(".gallery-card a").colorbox({
+        photo: true,
+        scalePhotos: true,
+        maxHeight: '90%',
+        maxWidth: '90%'
+    })
+</script>
 {% endblock %}

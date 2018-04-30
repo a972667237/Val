@@ -68,3 +68,12 @@ class Slide(models.Model):
         verbose_name_plural = verbose_name
     def __unicode__(self):
         return self.name
+
+class Gallery(models.Model):
+    name = models.CharField(u'gallery name', max_length=100)
+    img = models.ForeignKey(Site_image)
+    class Meta:
+        verbose_name = "Gallery"
+        verbose_name_plural = verbose_name
+    def __unicode__(self):
+        return self.name

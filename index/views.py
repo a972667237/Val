@@ -42,4 +42,5 @@ def product_detail(requests):
     return render(requests, 'each_products.html', locals())
 
 def gallery(requests):
+    gal = Gallery.objects.all()
     return render(requests, 'gallery.html', locals())
