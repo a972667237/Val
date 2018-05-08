@@ -93,3 +93,12 @@ table{
 .related-info a:hover{
     text-decoration: underline;
 }
+
+@media print{
+    header, .top_fixed, footer.footer, .related{
+        display: none;
+    }
+    img{
+        max-width: 100% !important;
+    }
+}
