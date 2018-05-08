@@ -223,6 +223,57 @@ header{
     height: 120vh;
 }
 
+footer ul li a{
+    text-decoration: none;
+    color: #6b6b6b;
+    border-bottom: 1px dotted #9e9e9e;
+    transition: color .22s ease-in-out,border .22s ease-in-out;
+    line-height: 1.65em;
+    color: #848484;
+}
+
+footer ul li{
+    padding: 0.46875em 0;
+}
+
+footer ul li a:hover {
+    text-decoration: none;
+    color: #9e9e9e;
+    border-bottom-color: #d1d1d1;
+}
+
+footer.footer{
+    background-color: #262626;
+}
+
+footer.footer .child-title{
+    margin-bottom: 12px;
+}
+
+footer.footer .child-title h2{
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.65em;
+}
+
+.icon{
+    color: white;
+}
+
+.contact a {
+    width: 38px;
+    height: 38px;
+    display: inline-block;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 7px;
+}
+
+.contact a:hover{
+    color: #9e9e9e;
+    border-bottom-color: #d1d1d1;
+    background-color: #b5d1d1;
+}
 
 @media screen and (max-width: 1400px){
   .gallery .column{
