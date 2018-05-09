@@ -7,6 +7,7 @@ def index(requests):
     slide = Slide.objects.all()
     product = Product.objects.all().order_by('-pk')
     product = product[:6]
+    home_gallery = Home_gallery.objects.all()
     return render(requests, 'index.html', locals())
 
 def article(requests):

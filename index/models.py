@@ -3,6 +3,12 @@ from __future__ import unicode_literals
 from django.db import models
 from DjangoUeditor.models import UEditorField
 
+
+HOME_GALLERY_TYPE = (
+    (1, u'11-1-21'),
+    (2, u'12-1-11')
+)
+
 # Create your models here.
 class Article(models.Model):
     title = models.CharField(u'title', max_length=100)
@@ -74,6 +80,22 @@ class Gallery(models.Model):
     img = models.ForeignKey(Site_image)
     class Meta:
         verbose_name = "Gallery"
+        verbose_name_plural = verbose_name
+    def __unicode__(self):
+        return self.name
+
+class Home_gallery(models.Model):
+    name = models.CharField(u'home gallery name', max_length=100)
+    show_type = models.IntegerField(u'gallery type',
+            choices=HOME_GALLERY_TYPE, default=1)
+    img1 = models.ForeignKey(Site_image, related_name="Img1")
+    img2 = models.ForeignKey(Site_image, related_name="Img2")
+    img3 = models.ForeignKey(Site_image, related_name="Img3")
+    img4 = models.ForeignKey(Site_image, related_name="Img4")
+    img5 = models.ForeignKey(Site_image, related_name="Img5")
+    img6 = models.ForeignKey(Site_image, related_name="Img6")
+    class Meta:
+        verbose_name = "Home Gallery"
         verbose_name_plural = verbose_name
     def __unicode__(self):
         return self.name

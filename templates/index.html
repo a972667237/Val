@@ -219,20 +219,45 @@
                     <h2>Gallery</h2>
                     <div class="vertial-hr"></div>
                 </div>
-                <div class="vertial-content columns">
-                    <div class="is-4 column">   
-                        <a href="/"><img src="/static/img/nyc1-500px.jpg"></a>
-                        <a href="/"><img src="/static/img/nyc2-500px.jpg"></a>
-                        <a href="/"><img src="/static/img/nyc3-500px.jpg"></a>
-                    </div>
-                    <div class="is-6 column">
-                        <a href="/"><img src="/static/img/nyc4-500px.jpg"></a>
-                    </div>
-                    <div class="is-2 column">
-                        <a href="/"><img src="/static/img/print1-500px.jpg"></a>
-                        <a href="/"><img src="/static/img/print2-500px.jpg"></a>
-                    </div>
-                </div>
+                <ul>
+                    {% for i in home_gallery %}
+                    {% if i.show_type == 1 %}
+                    <li>
+                        <div class="vertial-content columns">
+                            <div class="is-4 column">   
+                                <a href="/"><img src="/media/{{ i.img1.image }}"></a>
+                                <a href="/"><img src="/media/{{ i.img2.image }}"></a>
+                                <a href="/"><img src="/media/{{ i.img3.image }}"></a>
+                            </div>
+                            <div class="is-6 column">
+                                <a href="/"><img src="/media/{{ i.img4.image }}"></a>
+                            </div>
+                            <div class="is-2 column">
+                                <a href="/"><img src="/media/{{ i.img5.image }}"></a>
+                                <a href="/"><img src="/media/{{ i.img6.image }}"></a>
+                            </div>
+                        </div>
+                    </li>
+                    {% elif i.show_type == 2 %}
+                    <li>
+                        <div class="vertial-content columns">
+                            <div class="is-2 column">
+                                <a href="/"><img src="/media/{{ i.img1.image }}"></a>
+                                <a href="/"><img src="/media/{{ i.img2.image }}"></a>
+                            </div>
+                            <div class="is-6 column">
+                                <a href="/"><img src="/media/{{ i.img3.image }}"></a>
+                            </div>
+                            <div class="is-4 column">   
+                                <a href="/"><img src="/media/{{ i.img4.image }}"></a>
+                                <a href="/"><img src="/media/{{ i.img5.image }}"></a>
+                                <a href="/"><img src="/media/{{ i.img6.image }}"></a>
+                            </div>
+                        </div>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
             </article>
             <article class="follow vertials-card">
                 <div class="vertial-card-title">
@@ -248,6 +273,14 @@
     {% endblock %}
     {% block pageScript %}
     <script charset="utf-8">
+        var now = 0;
+        var all_li = $(".gallery ul li");
+        setInterval(function(){
+            all_li.eq(now).fadeOut(200, function(){
+                all_li.eq(now).show();
+            });
+            now = (now + 1)%all_li.length;
+        }, 10000);
         /*$('.gallery .vertial-content .is-4').photosetGrid({
             gutter: '5px',
             layout: '21',
