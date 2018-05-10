@@ -330,11 +330,52 @@ footer.footer .child-title h2{
     #jssor_1{
         height: 360px !important;
     }
+    .vertial-content .vertial-card.column {
+        display: inline-block;
+        width: 32.5%;
+    }
+    .vertial-content .is-4{
+        margin: 0;
+        padding: 0;
+        height: 40vh;
+    }
+    .vertial-content .is-6{
+        padding: 5px 0;
+        height: 30vh;
+        margin: 0;
+    }
+    .is-4 + .is-6{
+        padding-top: 0;
+        margin-top: -4px;
+    }
+    .vertial-content .is-2{
+        height: 30vh;    
+        margin-top: -6px;
+        padding-bottom: 5px;
+    }
+    .vertial-content .is-2 a{
+        height: 100%;
+        width: 49%;
+    }
+    .vertial-content .is-2 a:last-child{
+        margin-left: 2%;
+    }
+    .gallery .column:first-child{
+        padding: 0;
+        margin-top: 0;
+        padding-bottom: 6px;
+    }
+    .gallery .column:last-child{
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 450px){
     #jssor_1{
         height: 220px !important;
+    }
+    .vertial-content .vertial-card.column{
+        width: 49%;
     }
 }
 
