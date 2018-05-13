@@ -64,3 +64,18 @@
     margin-bottom: 20px;
     display: inline-block;
 }
+
+@media screen and (max-width: 768px){
+    .article-card{
+        width: 100%;
+    }
+    .article-detail .detail-content{
+        padding-left: 0;
+        margin-top: 12px;
+        width: 100%;
+    }
+    .article-detail a:first-child{
+        width: 100%;
+        padding-right: 0;
+    }
+}

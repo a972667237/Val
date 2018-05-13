@@ -86,3 +86,10 @@
         </div>
     </div>
 {% endblock %}
+{% block pageScript %}
+    <script charset="utf-8">
+        $(document).ready(function(){
+            $(".product-content img").css("max-width", "100%");
+        });
+    </script>
+{% endblock %}

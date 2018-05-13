@@ -94,11 +94,30 @@ table{
     text-decoration: underline;
 }
 
+
 @media print{
     header, .top_fixed, footer.footer, .related{
         display: none;
     }
     img{
         max-width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .art .article-left{
+        margin: 0;
+        width: 100%;
+    }
+    .related{
+        display: none;
+    }
+    .art .article-right{
+        margin: 0 auto;
+        width: 90%;
+        display: block;
+    }
+    .table{
+        width: 100%;
     }
 }

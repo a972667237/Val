@@ -48,3 +48,18 @@
     border-color: rgba(158,158,158,0.6);
 }
 
+@media screen and (max-width: 1080px){
+    .rows .product-card{
+        max-width: 24%;
+        height: 275px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .rows .product-card{
+        max-width: 32%;
+        height: auto;
+        margin-bottom: 32px;
+        font-size: 10px;
+    }
+}
