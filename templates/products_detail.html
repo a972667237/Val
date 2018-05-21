@@ -21,4 +21,25 @@
         </div>
     </div>
     </div>
+    <nav class="pagination is-small" role="navigation" aria-label="pagination">
+        {% if s.has_previous %}
+            <a class="pagination-previous" href="/products?pk={{ pk }}&page={{ s.previous_page_number }}">Previous</a>
+        {% else %}
+            <a class="pagination-previous" title="This is the first page" disabled>Previous</a>
+        {% endif %}
+        {% if s.has_next %}
+        <a class="pagination-next" href="/products?pk={{ pk }}&page={{ s.next_page_number }}">Next page</a>
+        {% else %}
+            <a class="pagination-next" disabled>Next page</a>
+        {% endif %}
+        <ul class="pagination-list">
+            {% for r in s.paginator.page_range %}
+                {% if page == r %}
+                    <li><a class="pagination-link is-current" href="/products?pk={{ pk }}&page={{ r }}" aria-label="Goto page {{ r }}" aria-current="page">{{ r }}</a></li>
+                {% else %}
+                    <li><a class="pagination-link" href="/products?pk={{ pk }}&page={{ r }}" aria-label="Goto page {{ r }}">{{ r }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
 {% endblock %}

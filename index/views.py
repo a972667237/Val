@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from .models import *
 
 # Create your views here.
@@ -33,6 +34,13 @@ def products(requests):
         return render(requests, 'products.html', locals())
     nt = get_object_or_404(Product_type, pk=pk)
     s = Product.objects.filter(kind=nt)
+    paginator = Paginator(s, 12)
+    try:
+        page = int(requests.GET.get('page', 1))
+        s = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        s = paginator.page(1)
+        page = 1
     return render(requests, 'products_detail.html', locals())
 
 def product_detail(requests):
