@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from .models import *
 
@@ -53,3 +53,18 @@ def product_detail(requests):
 def gallery(requests):
     gal = Gallery.objects.all()
     return render(requests, 'gallery.html', locals())
+
+def search(requests):
+    kw = requests.GET.get('keyword', None)
+    if not kw:
+        return HttpResponseRedirect('/products')
+    s = Product.objects.filter(name__contains=kw)
+    paginator = Paginator(s, 40)
+    try:
+        page = int(requests.GET.get('page', 1))
+        s = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        s = paginator.page(1)
+        page = 1
+    return render(requests, 'products_detail.html', locals())
+    

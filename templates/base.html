@@ -186,6 +186,18 @@
             $("html").css({"overflow-x": "auto", "overflow-y": "auto"});
             $(".menu").animate({width: "0", paddingLeft: "0"});
             $(".menu-background").animate({zIndex: "-100"});
+        });
+        $(".navbar-end .button").click(function(){
+            let key = $(".input").val();
+            if(key)
+                window.location.href = "/search?keyword=" + key;
+        });
+        $(".navbar-end").keypress(function(e){
+            if(e.which == 13){
+                let key = $(".input").val();
+                if(key)
+                    window.location.href = "/search?keyword=" + key;
+            }
         })
     </script>
     {% block pageScript %}

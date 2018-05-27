@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'gallery', gallery),
     url(r'^about', lambda x: HttpResponseRedirect('/article?pk=1')),
     url(r'^contact', lambda x: HttpResponseRedirect('/article?pk=2')),
+    url(r'^search', search),
 ]
